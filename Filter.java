@@ -11,14 +11,22 @@
 
 
 class Filter {
-
-    public static void main()
+    public static void main(String args[])
     {
 
-        int img = [[100,200,100],[200,50,200],[100,200,100]]
-        imageSmoother(img);
+        int img[][] = {{100,200,100},{200,50,200},{100,200,100}};
+        int res[][] = imageSmoother(img);
+
+        for(int i=0;i<3;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                System.out.print(res[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
     }
-    public int[][] imageSmoother(int[][] img) {
+    public static int[][] imageSmoother(int[][] img) {
             int r = img.length;
             int c = img[0].length;
             int out[][] = new int[r][c];
@@ -34,7 +42,7 @@ class Filter {
     }
 
     // this function return the avg value of surrounding cells
-    int filter_cube(int[][] img ,int x,int y)
+    static int filter_cube(int[][] img ,int x,int y)
     {
         int m = img.length; 
         int n = img[0].length;
